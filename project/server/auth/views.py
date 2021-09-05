@@ -1,5 +1,3 @@
-# project/server/auth/views.py
-
 from flask import Blueprint, request, make_response, jsonify
 from flask.views import MethodView
 
@@ -14,11 +12,11 @@ class RegisterAPI(MethodView):
     """
 
     def get(self):
-    	responseObject = {
-    		'status': 'success',
-    		'message': 'Request successful but please send an HTTP POST request to register the user.'
-    	}
-    	return make_response(jsonify(responseObject)), 201
+        responseObject = {
+            'status': 'success',
+            'message': 'Request successful but please send an HTTP POST request to register the user.'
+        }
+        return make_response(jsonify(responseObject)), 201
 
     def post(self):
         # get the post data
