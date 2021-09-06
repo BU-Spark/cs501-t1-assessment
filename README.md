@@ -1,6 +1,7 @@
 # Flask JWT Auth
 
-[![Build Status](https://travis-ci.org/realpython/flask-jwt-auth.svg?branch=master)](https://travis-ci.org/realpython/flask-jwt-auth)
+Loosely based on:
+[![Build Status](https://travis-ci.org/realpython/flask-jwt-auth.svg?branch=master)](https://travis-ci.org/realpython/flask-jwt-auth). However, flask-migrate has changed quite a bit and flask-script is deprecated.
 
 ## Quick Start
 
@@ -14,27 +15,29 @@
 Update *project/server/config.py*, and then run:
 
 ```sh
+$ export FLASK_APP=project.server
 $ export APP_SETTINGS="project.server.config.DevelopmentConfig"
 ```
 
 or
 
 ```sh
+$ export FLASK_APP=project.server
 $ export APP_SETTINGS="project.server.config.ProductionConfig"
 ```
 
 Create the tables and run the migrations:
 
 ```sh
-$ python manage.py create_db
-$ python manage.py db init
-$ python manage.py db migrate
+$ flask db init
+$ flask db migrate
+$ flask db upgrade
 ```
 
 ### Run the Application
 
 ```sh
-$ python manage.py runserver
+$ flask run
 ```
 
 So access the application at the address [http://localhost:5000/](http://localhost:5000/)
@@ -42,19 +45,5 @@ So access the application at the address [http://localhost:5000/](http://localho
 > Want to specify a different port?
 
 > ```sh
-> $ python manage.py runserver -h 0.0.0.0 -p 8080
+> $ flask run --host=0.0.0.0 --port=5000
 > ```
-
-### Testing
-
-Without coverage:
-
-```sh
-$ python manage.py test
-```
-
-With coverage:
-
-```sh
-$ python manage.py cov
-```
