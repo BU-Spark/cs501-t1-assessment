@@ -1,8 +1,5 @@
 # Flask JWT Auth
 
-Loosely based on:
-[![Build Status](https://travis-ci.org/realpython/flask-jwt-auth.svg?branch=master)](https://travis-ci.org/realpython/flask-jwt-auth). However, flask-migrate has changed quite a bit and flask-script is deprecated.
-
 ## Quick Start
 
 ### Basics
